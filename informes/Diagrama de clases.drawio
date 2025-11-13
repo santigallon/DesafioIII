@@ -1,0 +1,205 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="Page-1" id="9f46799a-70d6-7492-0946-bef42562c5a5">
+    <mxGraphModel dx="2843" dy="1280" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="78961159f06e98e8-17" value="entidad" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="70" y="130" width="330" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-21" value="&lt;div&gt;&amp;nbsp;# QString name&lt;/div&gt;&lt;div&gt;&amp;nbsp;# QPointF position&lt;/div&gt;&lt;div&gt;&amp;nbsp;# int health&lt;/div&gt;&lt;div&gt;&amp;nbsp;# bool alive&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="78961159f06e98e8-17" vertex="1">
+          <mxGeometry y="26" width="330" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-19" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="78961159f06e98e8-17" vertex="1">
+          <mxGeometry y="100" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-20" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ QString getName()&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ QPointF getPosition()&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ bool isAlive()&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ void setPosition(QPointF newPos)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ void takeDamage(int amount)&lt;/div&gt;&lt;div&gt;+ void heal(int amount)&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="78961159f06e98e8-17" vertex="1">
+          <mxGeometry y="108" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-108" value="NPC" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="70" y="390" width="250" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-109" value="&lt;div&gt;# Faction faction&lt;/div&gt;&lt;div&gt;# int sinLevel&lt;/div&gt;&lt;div&gt;# bool hostile&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="78961159f06e98e8-108" vertex="1">
+          <mxGeometry y="26" width="250" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-116" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="78961159f06e98e8-108" vertex="1">
+          <mxGeometry y="80" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-117" value="&lt;div&gt;void interact()&lt;/div&gt;&lt;div&gt;void update(float deltaTime)&lt;/div&gt;&lt;div&gt;Faction getFaction()&amp;nbsp;&lt;/div&gt;&lt;div&gt;bool isHostile()&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;void setHostile(bool state)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="78961159f06e98e8-108" vertex="1">
+          <mxGeometry y="88" width="250" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-1" value="player" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="-400" y="390" width="430" height="850" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-2" value="+ int health&lt;div&gt;+&amp;nbsp;float energy&lt;/div&gt;&lt;div&gt;+&amp;nbsp;float energy&lt;/div&gt;&lt;div&gt;+ QPointF velocity&lt;/div&gt;&lt;div&gt;+ double fe&lt;/div&gt;&lt;div&gt;+ double pecado&lt;/div&gt;&lt;div&gt;+ double ego&lt;/div&gt;&lt;div&gt;+ double gracia&lt;/div&gt;&lt;div&gt;+ int proyectiles&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ int pergaminos&lt;/div&gt;&lt;div&gt;+ int oracion&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ Qstring estadoActual&lt;/div&gt;&lt;div&gt;+ bool controlable&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-1">
+          <mxGeometry y="26" width="430" height="194" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-3" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-1">
+          <mxGeometry y="220" width="430" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-4" value="&lt;div&gt;+ void updateEntity(float dt)&lt;/div&gt;&lt;div&gt;+ void moveByInput(bool up, bool down, bool left, bool right, float dt)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ void pray(int intensidad = 1)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ void rest(float seconds)&lt;/div&gt;&lt;div&gt;+ void interactWith(NPC* npc, bool help)&lt;/div&gt;&lt;div&gt;+ void throwProjectile(const QPointF&amp;amp; dir)&lt;/div&gt;&lt;div&gt;+ void startExorcism()&lt;/div&gt;&lt;div&gt;+ void startWriting(const QString&amp;amp; texto)&lt;/div&gt;&lt;div&gt;+ void startOratory(const QString&amp;amp; tema)&lt;/div&gt;&lt;div&gt;+ void receiveProvidence();&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ void applyDamage(int amount, const QString&amp;amp; reason = QString())&lt;/div&gt;&lt;div&gt;+ void heal(int amount)&lt;/div&gt;&lt;div&gt;+ void increaseFe(double amount)&lt;/div&gt;&lt;div&gt;+ void decreaseFe(double amount)&lt;/div&gt;&lt;div&gt;+ void addPecado(double amount)&lt;/div&gt;&lt;div&gt;+ void reducePecado(double amount)&lt;/div&gt;&lt;div&gt;+ bool isFaithHigh(double threshold = 75.0)&lt;/div&gt;&lt;div&gt;+ bool isCorrupted(double threshold = 60.0)&lt;/div&gt;&lt;div&gt;+ void healthChanged(int newHealth);&lt;/div&gt;&lt;div&gt;+ void energyChanged(float newEnergy);&lt;/div&gt;&lt;div&gt;+ void faithChanged(double newFaith);&lt;/div&gt;&lt;div&gt;+ void pecadoChanged(double newPecado);&lt;/div&gt;&lt;div&gt;+ void stateChanged(const QString&amp;amp; newState);&lt;/div&gt;&lt;div&gt;+ void exorcismSucceeded();&lt;/div&gt;&lt;div&gt;+ void exorcismFailed();&lt;/div&gt;&lt;div&gt;+ void cartaCompleted(const QString&amp;amp; contenido);&lt;/div&gt;&lt;div&gt;+ void oratoriaSucceeded();&lt;/div&gt;&lt;div&gt;+ void oratoriaFailed();&lt;/div&gt;&lt;div&gt;+ void died();&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;- void onRegenTick();&lt;/div&gt;&lt;div&gt;- void onStateTimerTimeout();&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- void enterState(const QString&amp;amp; st, float duration = 0.0f)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- void leaveCurrentState();&lt;/div&gt;&lt;div&gt;- void clampSpirituals(); // mantiene fe/pecado/ego/gracia en [0,100]&lt;/div&gt;&lt;div&gt;- void tryProvidenceIfNeeded();&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- void onExorcismComplete();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- void onExorcismFail();&lt;/div&gt;&lt;div&gt;- void onCartaComplete(const QString&amp;amp; contenido);&lt;/div&gt;&lt;div&gt;- void onCartaFail();&lt;/div&gt;&lt;div&gt;- void onOratoriaSuccess();&lt;/div&gt;&lt;div&gt;- void onOratoriaFail();&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-1">
+          <mxGeometry y="228" width="430" height="622" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-7" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.453;entryY=0.997;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="78961159f06e98e8-108" target="78961159f06e98e8-20">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="30" y="500" as="sourcePoint" />
+            <mxPoint x="219" y="333" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="195" y="380" />
+              <mxPoint x="219" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-8" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="hKgf34ruzyy383zAUGRZ-10">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="400" y="380" as="sourcePoint" />
+            <mxPoint x="280" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="380" />
+              <mxPoint x="380" y="380" />
+              <mxPoint x="380" y="610" />
+              <mxPoint x="280" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-10" value="Endemoniado" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="410" y="390" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-11" value="# int possessionLevel&lt;br&gt;# bool exorcised" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-10">
+          <mxGeometry y="26" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-12" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-10">
+          <mxGeometry y="70" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-13" value="&lt;div&gt;+ void update(floatdeltaTime)&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ void interact()&lt;/div&gt;&lt;div&gt;+ void possess(int level)&lt;/div&gt;&lt;div&gt;+ void exorcise()&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-10">
+          <mxGeometry y="78" width="200" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-16" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="hKgf34ruzyy383zAUGRZ-17" target="hKgf34ruzyy383zAUGRZ-10">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="510" y="570" as="sourcePoint" />
+            <mxPoint x="620" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-17" value="poseido" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="410" y="590" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-18" value="&lt;div&gt;# QString demonName&lt;/div&gt;&lt;div&gt;# int rageLevel&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-17">
+          <mxGeometry y="26" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-19" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-17">
+          <mxGeometry y="70" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-20" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ void update(float deltaTime)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ void unleashPower()&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-17">
+          <mxGeometry y="78" width="200" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-21" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.758;entryY=0.997;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="hKgf34ruzyy383zAUGRZ-22" target="78961159f06e98e8-117">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="560" y="350" as="sourcePoint" />
+            <mxPoint x="260" y="571" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="740" y="370" />
+              <mxPoint x="370" y="370" />
+              <mxPoint x="370" y="620" />
+              <mxPoint x="260" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-22" value="ROMANO" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="630" y="390" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-23" value="&lt;div&gt;- int authorityLevel&lt;/div&gt;&lt;div&gt;- bool isPersecuting&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-22">
+          <mxGeometry y="26" width="220" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-24" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-22">
+          <mxGeometry y="70" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-25" value="&lt;div&gt;+ void update(float deltaTime)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; void interact()&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; void persecute(Player* player)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; void stopPersecution()&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-22">
+          <mxGeometry y="78" width="220" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-26" value="Cristiano" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="870" y="390" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-27" value="- bool convertedRecently;&lt;br&gt;- int prayerStrength;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-26">
+          <mxGeometry y="26" width="220" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-28" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-26">
+          <mxGeometry y="70" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-29" value="&lt;div&gt;+ void update(float deltaTime)&lt;/div&gt;&lt;div&gt;+ void interact() override&lt;/div&gt;&lt;div&gt;+ void prayFor(Player* player)&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-26">
+          <mxGeometry y="78" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-30" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.676;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="hKgf34ruzyy383zAUGRZ-26" target="78961159f06e98e8-117">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="940" y="380" as="sourcePoint" />
+            <mxPoint x="460" y="550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="980" y="360" />
+              <mxPoint x="360" y="360" />
+              <mxPoint x="360" y="630" />
+              <mxPoint x="240" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-31" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="hKgf34ruzyy383zAUGRZ-32">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="410" y="160" as="sourcePoint" />
+            <mxPoint x="300" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="740" y="580" />
+              <mxPoint x="620" y="580" />
+              <mxPoint x="400" y="580" />
+              <mxPoint x="400" y="600" />
+              <mxPoint x="300" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-32" value="Judio" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="630" y="590" width="220" height="147" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-33" value="&lt;div&gt;- bool pharisee&lt;/div&gt;&lt;div&gt;- bool curiousAboutFaith&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-32">
+          <mxGeometry y="26" width="220" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-34" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-32">
+          <mxGeometry y="60" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-35" value="&lt;div&gt;+ void update(float deltaTime)&lt;/div&gt;&lt;div&gt;+ void interact()&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ void discussScripture(Player* player)&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-32">
+          <mxGeometry y="68" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-36" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.996;entryY=1.003;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="hKgf34ruzyy383zAUGRZ-37" target="78961159f06e98e8-117">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="960" y="590" as="sourcePoint" />
+            <mxPoint x="330" y="570" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="980" y="570" />
+              <mxPoint x="390" y="570" />
+              <mxPoint x="390" y="590" />
+              <mxPoint x="320" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-37" value="Angel&amp;nbsp;" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="870" y="590" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-38" value="&lt;div&gt;- QString message&lt;/div&gt;&lt;div&gt;- bool visibleToPlayer&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-37">
+          <mxGeometry y="26" width="220" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-39" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-37">
+          <mxGeometry y="70" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-40" value="&lt;div&gt;+ void update(float deltaTime)&lt;/div&gt;&lt;div&gt;+ void interact() override&lt;/div&gt;&lt;div&gt;+ void revealToPlayer()&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hKgf34ruzyy383zAUGRZ-37">
+          <mxGeometry y="78" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="hKgf34ruzyy383zAUGRZ-45" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.397;entryY=1.001;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="78961159f06e98e8-20">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-180" y="390" as="sourcePoint" />
+            <mxPoint x="-166" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-180" y="372" />
+              <mxPoint x="200" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

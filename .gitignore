@@ -1,0 +1,42 @@
+# Compilación y binarios
+*.o
+*.obj
+*.dll
+*.exe
+*.so
+*.dylib
+*.a
+
+# Archivos de Qt Creator
+*.pro.user
+.pro.user.
+*.qbs.user
+.qbs.user.
+*.autosave
+*.moc
+*.qmake.stash
+
+# Directorios de compilación
+build*/
+debug/
+release/
+
+# Archivos temporales
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Copias locales o exportaciones
+*.zip
+*.tar
+*.gz
+
+# Archivos generados por informes
+informe/*.pdf
+informe/diagramas/*.png
+informe/diagramas/*.jpg
