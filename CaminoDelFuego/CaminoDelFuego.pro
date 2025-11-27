@@ -10,28 +10,50 @@ CONFIG += c++17
 
 SOURCES += \
     angel.cpp \
+    camara2d.cpp \
     cristiano.cpp \
     endemoniado.cpp \
     entidad.cpp \
+    gestorbarrasestado.cpp \
+    gestoreventos.cpp \
+    gestorfisicas.cpp \
+    gestorinteracciones.cpp \
+    gestorsonido.cpp \
+    hudmanager.cpp \
     judio.cpp \
     main.cpp \
     mainwindow.cpp \
+    mapatiles.cpp \
     npc.cpp \
     player.cpp \
     poseido.cpp \
-    romano.cpp
+    romano.cpp \
+    ventanaexorcismo.cpp \
+    ventanaoratoria.cpp \
+    ventanasanacion.cpp
 
 HEADERS += \
     angel.h \
+    camara2d.h \
     cristiano.h \
     endemoniado.h \
     entidad.h \
+    gestorbarrasestado.h \
+    gestoreventos.h \
+    gestorfisicas.h \
+    gestorinteracciones.h \
+    gestorsonido.h \
+    hudmanager.h \
     judio.h \
     mainwindow.h \
+    mapatiles.h \
     npc.h \
     player.h \
     poseido.h \
-    romano.h
+    romano.h \
+    ventanaexorcismo.h \
+    ventanaoratoria.h \
+    ventanasanacion.h
 
 FORMS += \
     mainwindow.ui
