@@ -1,21 +1,40 @@
 #ifndef NPC_H
 #define NPC_H
-#include <entidad.h>
+
+#include "Entidad.h"
 #include <QString>
-#include <QPointF>
 
-class NPC
-{
-protected:
+/**
+ * NPC - base para cualquier personaje no jugable.
+ * Define facción y comportamiento básico.
+ */
+enum class Faccion { PAGANO, JUDIO, CRISTIANO, ROMANO, END, POSEIDO };
 
-    int sinLevel;
-    bool hostile;
-
+class NPC : public Entidad {
+    Q_OBJECT
 public:
-    void interact();
-    void update(float deltaTime);
-    bool isHostile();
-    void setHostile(bool state);
-};
+    explicit NPC(Faccion f = Faccion::PAGANO, QGraphicsItem* parent = nullptr);
+    ~NPC() override;
 
+    Faccion faccion() const;
+    int nivelPecado() const;
+    bool esHostil() const;
+    void setHostil(bool state);
+
+    // Lógica base
+    void actualizar(float dt) override;
+    void interactuar(Entidad* otro) override;
+
+    // Transformaciones
+    virtual void transformarA(Faccion nuevaFaccion);
+
+signals:
+    void cambioDeFaccion(NPC* quien, Faccion nuevaFaccion);
+
+protected:
+    Faccion m_faccion;
+    int m_nivelPecado;
+    bool m_hostil;
+};
 #endif // NPC_H
+

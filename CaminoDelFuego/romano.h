@@ -1,17 +1,27 @@
-#ifndef ROMANO_H
-#define ROMANO_H
+#ifndef JUDIO_H
+#define JUDIO_H
 
-class Romano
-{
-private:
-    int autoridadLevel;
-    bool estaPersiguiendo;
+#pragma once
+#include "NPC.h"
 
+/**
+ * Romano - guardias, centuriones, autoridades romanas
+ */
+class Romano : public NPC {
+    Q_OBJECT
 public:
-    void actualizar(float deltaTime);
-    void interactua();
-    void persigue(Player* player);
-    void stopPersecucion();
-};
+    explicit Romano(QGraphicsItem* parent = nullptr);
+    ~Romano() override;
 
-#endif // ROMANO_H
+    void actualizar(float dt) override;
+    void interactuar(Entidad* otro) override;
+
+    void perseguirJugador(Entidad* jugador);
+    void detenerPersecucion();
+private:
+    int m_nivelAutoridad;
+};
+#endif // ENTIDAD_H
+
+
+

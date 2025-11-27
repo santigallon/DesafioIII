@@ -1,24 +1,44 @@
 #ifndef ENTIDAD_H
 #define ENTIDAD_H
 
-#include <QString>
+#include <QObject>
+#include <QGraphicsPixmapItem>
 #include <QPointF>
+#include <QString>
 
-class Entidad
-{
-protected:
-    QString name;
-    QPointF position;
-    int health;
-    bool alive;
-
+class Entidad : public QObject, public QGraphicsPixmapItem {
+    Q_OBJECT
 public:
-    QString getName();
-    QPointF getPosition();
-    bool isAlive();
-    void setPosition(QPointF newPos);
-    void takeDamage(int amount);
-    void heal(int amount);
+    explicit Entidad(QGraphicsItem* parent = nullptr);
+    virtual ~Entidad() override;
+
+    // Atributos básicos
+    QString nombre() const;
+    void setNombre(const QString& n);
+
+    QPointF posicion() const;
+    void setPosicion(const QPointF& p);
+
+    int vida() const;
+    void setVida(int v);
+    bool estaVivo() const;
+
+    // Métodos virtuales para sobreescribir
+    virtual void actualizar(float dt);   // lógica por frame
+    virtual void interactuar(Entidad* otro); // interacción genérica
+
+    // Acciones básicas
+    virtual void recibirDanio(int cantidad, const QString& razon = QString());
+    virtual void curar(int cantidad);
+
+signals:
+    void murio(Entidad* quien);
+    void vidaCambiada(int nuevaVida);
+
+protected:
+    QString m_nombre;
+    int m_vida;
+    bool m_vivo;
 };
 
 #endif // ENTIDAD_H
