@@ -1,47 +1,43 @@
 #ifndef GESTORSONIDO_H
 #define GESTORSONIDO_H
 
-#pragma once
 #include <QObject>
-#include <QMap>
-#include <QString>
 #include <QMediaPlayer>
-#include <QSoundEffect>
-
-/**
- * GestorSonido
- * - Carga y reproduce efectos cortos (QSoundEffect) y música de fondo (QMediaPlayer).
- * - API simple para pedir reproducción por nombre.
- *
- * NOTA: para compilar con QSoundEffect y QMediaPlayer asegúrate de tener enlazadas las
- * bibliotecas de multimedia en tu proyecto (.pro o CMake).
- */
+#include <QAudioOutput>
+#include <QHash>
+#include <QString>
 
 class GestorSonido : public QObject {
     Q_OBJECT
 public:
     explicit GestorSonido(QObject* parent = nullptr);
-    ~GestorSonido() override;
+    ~GestorSonido();
 
-    // carga un efecto simple
+    // CARGA DE EFECTOS
     void cargarEfecto(const QString& nombre, const QString& ruta);
-    // reproduce efecto al instante
+
+    // REPRODUCCIÓN DE EFECTOS
     void reproducirEfecto(const QString& nombre, float volumen = 1.0f);
 
-    // música de fondo (un canal)
+    // MÚSICA DE FONDO
     void reproducirMusica(const QString& ruta, bool loop = true);
     void detenerMusica();
 
-    // atajos semánticos
+    // EVENTOS ESPECIALES
     void inicioExorcismo();
     void inicioOratoria();
     void inicioSanacion();
+
+    // AUDIO SEGÚN ZONA
     void sonidoAmbiente(const QString& zona);
 
 private:
-    QMap<QString, QSoundEffect*> m_efectos;
+    // Música
     QMediaPlayer* m_musicPlayer;
-};
+    QAudioOutput* m_musicOutput;
 
+    // Efectos
+    QHash<QString, QMediaPlayer*> m_efectos;
+};
 
 #endif // GESTORSONIDO_H

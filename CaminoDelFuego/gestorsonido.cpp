@@ -1,47 +1,55 @@
 #include "GestorSonido.h"
 #include <QUrl>
-#include <QDir>
 
 GestorSonido::GestorSonido(QObject* parent)
-    : QObject(parent),
-    m_musicPlayer(new QMediaPlayer(this))
+    : QObject(parent)
 {
-    // configuración básica
-    m_musicPlayer->setVolume(30);
+    m_musicOutput = new QAudioOutput(this);
+    m_musicPlayer = new QMediaPlayer(this);
+    m_musicPlayer->setAudioOutput(m_musicOutput);
+    m_musicOutput->setVolume(0.4f);
 }
 
 GestorSonido::~GestorSonido() {
-    // limpiar efectos
     qDeleteAll(m_efectos);
     m_efectos.clear();
 }
 
 void GestorSonido::cargarEfecto(const QString& nombre, const QString& ruta) {
     if (m_efectos.contains(nombre)) return;
-    QSoundEffect* eff = new QSoundEffect(this);
-    eff->setSource(QUrl::fromLocalFile(ruta));
-    eff->setVolume(0.8f);
-    m_efectos.insert(nombre, eff);
+
+    QMediaPlayer* efecto = new QMediaPlayer(this);
+    QAudioOutput* out = new QAudioOutput(this);
+
+    efecto->setAudioOutput(out);
+    efecto->setSource(QUrl::fromLocalFile(ruta));
+    out->setVolume(1.0f);
+
+    m_efectos.insert(nombre, efecto);
 }
 
 void GestorSonido::reproducirEfecto(const QString& nombre, float volumen) {
     if (!m_efectos.contains(nombre)) return;
-    QSoundEffect* eff = m_efectos.value(nombre);
-    eff->setVolume(volumen);
-    eff->play();
+    QMediaPlayer* e = m_efectos.value(nombre);
+
+    e->audioOutput()->setVolume(volumen);
+    e->stop();  // por si está reproduciendo
+    e->play();
 }
 
 void GestorSonido::reproducirMusica(const QString& ruta, bool loop) {
-    m_musicPlayer->setMedia(QUrl::fromLocalFile(ruta));
+    m_musicPlayer->setSource(QUrl::fromLocalFile(ruta));
     m_musicPlayer->setLoops(loop ? QMediaPlayer::Infinite : 1);
     m_musicPlayer->play();
 }
 
 void GestorSonido::detenerMusica() {
-    if (m_musicPlayer->state() == QMediaPlayer::PlayingState) {
-        m_musicPlayer->stop();
-    }
+    m_musicPlayer->stop();
 }
+
+// ------------------------------
+// EVENTOS ESPECIALES
+// ------------------------------
 
 void GestorSonido::inicioExorcismo() {
     reproducirEfecto("exorcismo_start", 1.0f);
@@ -49,8 +57,8 @@ void GestorSonido::inicioExorcismo() {
 }
 
 void GestorSonido::inicioOratoria() {
-    reproducirEfecto("oratoria_start", 0.9f);
-    reproducirMusica("audio/oratoria_bajo.mp3", true);
+    reproducirEfecto("oratoria_start", 1.0f);
+    reproducirMusica("audio/oratoria_loop.mp3", true);
 }
 
 void GestorSonido::inicioSanacion() {
@@ -58,8 +66,4 @@ void GestorSonido::inicioSanacion() {
     reproducirMusica("audio/sanacion_loop.mp3", true);
 }
 
-void GestorSonido::sonidoAmbiente(const QString& zona) {
-    // ejemplo: reproducir audio segun zona
-    Q_UNUSED(zona);
-    // m_musicPlayer->setMedia(...)
-}
+

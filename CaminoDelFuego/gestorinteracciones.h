@@ -35,6 +35,7 @@ public:
     void intentarExorcismo(Player* jugador, Entidad* objetivo);
     void intentarOratoria(Player* jugador, Entidad* audiencia);
     void intentarSanacion(Player* jugador, Entidad* objetivo);
+    void procesarInteracciones(float dt);
 
 signals:
     // señales para que la UI / GestorPantallas abra las ventanas correspondientes

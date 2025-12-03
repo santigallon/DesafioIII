@@ -1,41 +1,55 @@
 #include "Endemoniado.h"
+#include <cmath>
 
 Endemoniado::Endemoniado(QGraphicsItem* parent)
-    : NPC(Faccion::END, parent),
-    m_nivelPosesion(1),
-    m_exorcizado(false)
+    : NPC(Faccion::ENDEMONIADO, parent),
+    m_nivelPosesion(3),
+    m_exorcizado(false),
+    m_tiempoErratico(0.0f)
 {
-    m_nombre = "Endemoniado";
-    m_vida = 40;
+    // Usar el m_hostil heredado de NPC
     m_hostil = true;
 }
 
-Endemoniado::~Endemoniado() = default;
+void Endemoniado::actualizar(float dt) {
+    if (!m_hostil || m_exorcizado) return;
 
-void Endemoniado::actualizar(float /*dt*/) {
-    // comportamiento demoníaco: ataques, maldiciones
-}
+    if (m_playerTarget) {
 
-void Endemoniado::interactuar(Entidad* otro) {
-    Q_UNUSED(otro);
-    // acciones de ataque o emitir voces
-}
+        float dist = distanciaA(m_playerTarget);
 
-void Endemoniado::poseer(int nivel) {
-    m_nivelPosesion = nivel;
-    m_hostil = true;
-}
+        if (dist < 180) {
+            moverHacia(m_playerTarget->posicion(), 45.0f);
+        } else {
+            // Patrullar erráticamente
+            m_tiempoErratico += dt;
+            float dx = std::sin(m_tiempoErratico * 1.9f) * 10;
+            float dy = std::cos(m_tiempoErratico * 1.7f) * 10;
+            moverPor(dx, dy);
+        }
 
-void Endemoniado::expulsarDemonio() {
-    // lógica básica: si nivel pequeño, se cura
-    if (m_nivelPosesion <= 2) {
-        m_exorcizado = true;
-        m_hostil = false;
-        transformarA(Faccion::CRISTIANO); // ejemplo: se convierte
-    } else {
-        // aún persistente
+        if (dist < 20)
+            m_playerTarget->modificarVida(-8);
     }
 }
 
-int Endemoniado::nivelPosesion() const { return m_nivelPosesion; }
-bool Endemoniado::estaExorcizado() const { return m_exorcizado; }
+void Endemoniado::interactuar(Entidad* otro) {
+    if (!otro) return;
+
+    if (esJugador(otro)) {
+        emitirDialogo("¡GRAAAAH!");
+        otro->modificarVida(-10);
+    }
+}
+
+void Endemoniado::expulsarDemonio() {
+    if (m_nivelPosesion <= 2) {
+        m_exorcizado = true;
+        m_hostil = false;
+        transformarA(Faccion::CRISTIANO);
+        emitirDialogo("Estoy libre... gracias...");
+    } else {
+        emitirDialogo("¡NO SALDRÉ!");
+        m_nivelPosesion -= 1;
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Todos los archivos (*)",
+    "fileStates": {
+        "0844506928e5b1d10ab12898d93ab60a0574397b.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "47384.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "sin nombre.tmx": {
+            "scale": 0.3393509615384615,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2133.4844513706885,
+                "y": 1420.3584330948506
+            }
+        },
+        "sin nombre.tmx#0844506928e5b1d10ab12898d93ab60a0574397b": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "sin nombre.tmx#ae0551c6d30071a29d902c054fd51fdd795bfa5a": {
+            "scaleInDock": 1
+        },
+        "sin nombre.tmx#sin nombre": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/USUARIO/DesafioIII/sprites",
+    "last.imagePath": "C:/Users/USUARIO/DesafioIII/sprites",
+    "map.lastUsedExportFilter": "Archivos de mapas de Tiled (*.tmx *.xml)",
+    "openFiles": [
+    ],
+    "project": "sin nombre.tiled-project",
+    "recentFiles": [
+        "sin nombre.tmx",
+        "0844506928e5b1d10ab12898d93ab60a0574397b.tsx",
+        "47384.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 1,
+        "width": 1
+    }
+}

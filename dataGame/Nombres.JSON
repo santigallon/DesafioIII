@@ -1,0 +1,50 @@
+{
+  "judios": [
+    "Ezequías", "Samuel", "Natán", "Eleazar", "Malquías",
+    "Josías", "Tobías", "Uriel", "Leví", "Zacarías", 
+    "Rebeca", "Sara", "Raquel", "Marta", "Míriam",
+    "Gabriel", "Joel", "Job", "Josué", "Lázaro",
+    "Noemí", "Rut", "Magdalena", "Santiago", "Saúl",
+    "Judit", "Lucas", "Miguel", "Rafael", "Zaqueo"
+  ],
+
+  "cristianos": [
+    "Pablo", "Tito", "Timoteo", "Bernabé", "Esteban",
+    "Clemente", "Teótimo", "Teresa", "Práxedes",
+    "Paulina", "Sebastián", "Sofía", "Jessica", 
+    "Joaquín", "Juan", "José", "Nancy", "Selene",
+    "Onesíforo", "Pelayo", "Pitágoras", "Stefano", 
+    "Zabulón", "Noel", "Labán"
+  ],
+
+  "romanos_praenomen": [
+    "Aulus", "Appius", "Caius", "Gnaeus", "Decimus",
+    "Lucius", "Marcus", "Manius", "Publius",
+    "Quintus", "Servius", "Sextus", "Spurius",
+    "Titus", "Tiberius"
+  ],
+
+  "romanos_nomen": [
+    "Aelius", "Antonius", "Aurelius", "Claudius",
+    "Flavius", "Julius", "Pompeius", "Valerius",
+    "Ulpius"
+  ],
+
+  "romanos_cognomen": [
+    "Caesar", "Scaevola", "Cicero", "Magnus",
+    "Naso", "Varro", "Paullus", "Barbarus", 
+    "Felix", "Agricola", "Severus"
+  ],
+
+  "demonios": [
+    "Ukobach", "Ura", "Uval", "Vassago", "Veltis",
+    "Vepar", "Verdelet", "Volac", "Vodnik", "Vual",
+    "Xaphan", "Zagiel", "Zephar", "Zimimar", "Zozo",
+    "Tumael", "Turel"
+  ],
+
+  "angeles": [
+    "Gabriel", "Miguel", "Rafael", "Uriel",
+    "Sariel", "Anael", "Raguel", "Jophiel"
+  ]
+}

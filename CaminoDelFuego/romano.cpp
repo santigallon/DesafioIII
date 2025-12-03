@@ -13,19 +13,20 @@ Romano::Romano(QGraphicsItem* parent)
 Romano::~Romano() = default;
 
 void Romano::actualizar(float /*dt*/) {
-    // patrulla o busca amenazas
+    // patrullar base
 }
 
 void Romano::interactuar(Entidad* otro) {
-    Q_UNUSED(otro);
-    // acciones: arrestar, preguntar, perseguir
+    if (esJugador(otro)) {
+        emitirDialogo("¡Alto! Identifícate.");
+    }
 }
 
 void Romano::perseguirJugador(Entidad* jugador) {
-    Q_UNUSED(jugador);
-    // lógica de persecución
+    if (!jugador) return;
+    moverHacia(jugador->posicion(), 50.0f);
 }
 
 void Romano::detenerPersecucion() {
-    // parar
+    moverPor(0, 0);
 }

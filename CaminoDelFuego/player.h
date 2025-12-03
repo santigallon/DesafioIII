@@ -6,7 +6,6 @@
 #include <QString>
 #include <QTimer>
 
-
 class Player : public Entidad {
     Q_OBJECT
 public:
@@ -58,6 +57,12 @@ signals:
     void feCambiada(double nuevaFe);
     void pecadoCambiado(double nuevoPecado);
 
+    // <-- SEÑALES AÑADIDAS (eran emitidas en Player.cpp)
+    void crearProyectil(const QPointF& origen, const QPointF& direccion);
+    void pedirExorcismo(Entidad* objetivo);
+    void abrirVentanaEscritura(const QString& texto);
+    void abrirVentanaOratoria(const QString& tema);
+
     void exorcismoExitoso(Entidad* objetivo);
     void exorcismoFallido(Entidad* objetivo);
     void cartaCompleta(const QString& contenido);
@@ -92,6 +97,4 @@ private:
     void clampValores();
 };
 #endif // PLAYER_H
-
-
 

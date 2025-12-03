@@ -3,21 +3,33 @@
 
 #include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
-QT_END_NAMESPACE
+class Game;
+class HudManager;
+class InputView;
+class QGraphicsScene;
+class QTimer;
+class HabilidadWidget;
+class Registro;
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
-
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    explicit MainWindow(QWidget* parent = nullptr);
+    ~MainWindow() override;
+
+private slots:
+    void actualizarJuego();
 
 private:
-    Ui::MainWindow *ui;
+    Game* m_game;
+    InputView* m_view;
+    QGraphicsScene* m_scene;
+    HudManager* m_hud;
+    QTimer* m_timer;
+
+    // Mini-juego y log
+    HabilidadWidget* m_habilidad;
+    Registro* m_registro;
 };
+
 #endif // MAINWINDOW_H

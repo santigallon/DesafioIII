@@ -1,0 +1,65 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "mapaEfeso.xml",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Todos los archivos (*)",
+    "fileStates": {
+        "0844506928e5b1d10ab12898d93ab60a0574397b.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 1
+        },
+        "ae0551c6d30071a29d902c054fd51fdd795bfa5a.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 1
+        },
+        "camioDamasco.xml": {
+            "expandedGroupLayers": [
+                4
+            ],
+            "scale": 0.75,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 737.3333333333333,
+                "y": 621.3333333333334
+            }
+        },
+        "mapaEfeso.xml": {
+            "scale": 1,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 468,
+                "y": 3496
+            }
+        }
+    },
+    "last.externalTilesetPath": "C:/Users/USUARIO/DesafioIII/sprites",
+    "last.imagePath": "C:/Users/USUARIO/DesafioIII/sprites",
+    "map.height": 40,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 40,
+    "openFiles": [
+        "camioDamasco.xml",
+        "0844506928e5b1d10ab12898d93ab60a0574397b.tsx",
+        "ae0551c6d30071a29d902c054fd51fdd795bfa5a.tsx",
+        "mapaEfeso.xml"
+    ],
+    "project": "EfesoMapa.tiled-project",
+    "recentFiles": [
+        "camioDamasco.xml",
+        "0844506928e5b1d10ab12898d93ab60a0574397b.tsx",
+        "ae0551c6d30071a29d902c054fd51fdd795bfa5a.tsx",
+        "mapaEfeso.xml"
+    ],
+    "tileset.lastUsedFilter": "Archivos de conjuntos de patrones Tiled (*.tsx *.xml)",
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

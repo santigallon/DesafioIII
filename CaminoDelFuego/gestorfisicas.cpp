@@ -18,8 +18,7 @@ GestorFisicas::GestorFisicas(QGraphicsScene* scene, QObject* parent)
 GestorFisicas::~GestorFisicas() = default;
 
 void GestorFisicas::actualizar(float /*dt*/) {
-    // Aquí puedes propagar partículas, viento, efectos de polvo, etc.
-    // Por ahora dejamos comportamiento ligero para el demo.
+
 }
 
 void GestorFisicas::establecerGravedad(float g) {
@@ -85,7 +84,7 @@ void GestorFisicas::terremotoSagrado(float magnitud) {
 void GestorFisicas::onTimeoutDivino() {
     // finalizar evento divino
     if (m_eventoDivinoActual == "LuzDivina") {
-        // reducir luz a nivel base (para demo lo ponemos en 1.0)
+        // reducir luz a nivel base (para demo 1.0)
         establecerNivelLuz(1.0f);
     }
     emit eventoDivinoTerminado(m_eventoDivinoActual);

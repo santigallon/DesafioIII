@@ -1,4 +1,5 @@
-QT       += core gui
+QT += widgets gui core multimedia
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,19 +15,26 @@ SOURCES += \
     cristiano.cpp \
     endemoniado.cpp \
     entidad.cpp \
+    game.cpp \
     gestorbarrasestado.cpp \
     gestoreventos.cpp \
     gestorfisicas.cpp \
     gestorinteracciones.cpp \
     gestorsonido.cpp \
+    habilidadwidget.cpp \
     hudmanager.cpp \
+    inputview.cpp \
     judio.cpp \
+    level.cpp \
+    levelmanager.cpp \
     main.cpp \
     mainwindow.cpp \
     mapatiles.cpp \
+    nombremanager.cpp \
     npc.cpp \
     player.cpp \
     poseido.cpp \
+    registro.cpp \
     romano.cpp \
     ventanaexorcismo.cpp \
     ventanaoratoria.cpp \
@@ -38,18 +46,25 @@ HEADERS += \
     cristiano.h \
     endemoniado.h \
     entidad.h \
+    game.h \
     gestorbarrasestado.h \
     gestoreventos.h \
     gestorfisicas.h \
     gestorinteracciones.h \
     gestorsonido.h \
+    habilidadwidget.h \
     hudmanager.h \
+    inputview.h \
     judio.h \
+    level.h \
+    levelmanager.h \
     mainwindow.h \
     mapatiles.h \
+    nombremanager.h \
     npc.h \
     player.h \
     poseido.h \
+    registro.h \
     romano.h \
     ventanaexorcismo.h \
     ventanaoratoria.h \

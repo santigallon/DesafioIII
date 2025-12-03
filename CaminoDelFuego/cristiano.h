@@ -6,7 +6,8 @@
 class Cristiano : public NPC {
     Q_OBJECT
 public:
-    explicit Cristiano(QGraphicsItem* parent = nullptr);
+    explicit
+    Cristiano(QGraphicsItem* parent = nullptr);
     ~Cristiano() override;
 
     void actualizar(float dt) override;

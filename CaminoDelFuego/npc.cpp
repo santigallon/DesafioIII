@@ -18,12 +18,13 @@ bool NPC::esHostil() const { return m_hostil; }
 void NPC::setHostil(bool s) { m_hostil = s; }
 
 void NPC::actualizar(float /*dt*/) {
-    // IA simple por defecto (sobrescribir en subclases)
+    // comportamiento básico vacío
 }
 
 void NPC::interactuar(Entidad* /*otro*/) {
-    // Interacción genérica
+    // interacción genérica
 }
+
 
 void NPC::transformarA(Faccion nuevaFaccion) {
     m_faccion = nuevaFaccion;

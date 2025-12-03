@@ -1,18 +1,15 @@
 #ifndef ANGEL_H
 #define ANGEL_H
 
-#pragma once
-#include "NPC.h"
+#include "Entidad.h"
 #include <QString>
 
-/**
- * Angel - mensajero espiritual. No es humano; puede activar eventos.
- */
-class Angel : public NPC {
+class GestorSonido;
+
+class Angel : public Entidad {
     Q_OBJECT
 public:
-    explicit Angel(QGraphicsItem* parent = nullptr);
-    ~Angel() override;
+    Angel(QGraphicsItem* parent = nullptr);
 
     void actualizar(float dt) override;
     void interactuar(Entidad* otro) override;
@@ -20,8 +17,15 @@ public:
     void revelarAlJugador();
     void enviarMensaje(const QString& mensaje);
 
+signals:
+    void mensajeDivino(const QString& mensaje);
+
 private:
-    QString m_mensaje;
     bool m_visibleParaJugador;
+    QString m_mensaje;
+    QPointF m_posInicial;
+    float m_tiempo;
+    GestorSonido* m_sonido;
 };
-#endif // ANGEL_H
+
+#endif

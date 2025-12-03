@@ -15,19 +15,25 @@ Poseido::Poseido(QGraphicsItem* parent)
 Poseido::~Poseido() = default;
 
 void Poseido::actualizar(float /*dt*/) {
-    // comportamiento avanzado: especial ataques, fases
+    // comportamiento agresivo avanzado
+    if (m_rabia > 5)
+        moverAleatorio(35);
 }
 
 void Poseido::interactuar(Entidad* otro) {
-    Q_UNUSED(otro);
-    // interacciones agresivas
+    if (esJugador(otro))
+        otro->modificarVida(-12);
 }
 
 void Poseido::desatarPoder() {
-    // por ejemplo, aumenta daño o invoca entidades menores
     m_rabia += 2;
+    emitirEfectoLuz(Qt::red);
 }
 
 void Poseido::setNombreDemonio(const QString& nombre) {
     m_nombreDemonio = nombre;
 }
+
+
+
+

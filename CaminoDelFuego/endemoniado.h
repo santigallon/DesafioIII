@@ -1,31 +1,26 @@
 #ifndef ENDEMONIADO_H
 #define ENDEMONIADO_H
 
-#pragma once
 #include "NPC.h"
 
-/**
- * Endemoniado - NPC con influencia demoníaca.
- * Soporta nivel de posesión y exorcismo.
- */
 class Endemoniado : public NPC {
     Q_OBJECT
 public:
-    explicit Endemoniado(QGraphicsItem* parent = nullptr);
-    ~Endemoniado() override;
+    Endemoniado(QGraphicsItem* parent = nullptr);
 
     void actualizar(float dt) override;
+
     void interactuar(Entidad* otro) override;
 
-    void poseer(int nivel);
-    void expulsarDemonio(); // intento de exorcismo
-
-    int nivelPosesion() const;
-    bool estaExorcizado() const;
+    void expulsarDemonio();
+    void setPlayerTarget(NPC* p) { m_playerTarget = p; }
 
 protected:
     int m_nivelPosesion;
     bool m_exorcizado;
+    float m_tiempoErratico;
+
+    NPC* m_playerTarget = nullptr;
 };
 
-#endif // ENDEMONIADO_H
+#endif

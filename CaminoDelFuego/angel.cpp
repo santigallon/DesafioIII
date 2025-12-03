@@ -1,30 +1,52 @@
 #include "Angel.h"
+#include "GestorSonido.h"
+
+#include <cmath>
 
 Angel::Angel(QGraphicsItem* parent)
-    : NPC(Faccion::PAGANO, parent), // no pertenece a facción humana; usamos PAGANO por defecto
-    m_mensaje(""),
-    m_visibleParaJugador(false)
+    : Entidad(parent),
+    m_visibleParaJugador(false),
+    m_tiempo(0.0f),
+    m_sonido(nullptr)
 {
-    m_nombre = "Ángel";
-    m_vida = 9999; // inmortal simbólico
+    m_posInicial = posicion();
+    setVisible(false);
 }
 
-Angel::~Angel() = default;
+void Angel::actualizar(float dt) {
+    // Flotación suave
+    float dy = std::sin(m_tiempo * 2.2f) * 10.0f;
+    setPosicion(QPointF(m_posInicial.x(), m_posInicial.y() + dy));
 
-void Angel::actualizar(float /*dt*/) {
-    // Flota, aparece en momentos divinos
+    m_tiempo += dt;
+
+    if (m_visibleParaJugador) {
+        emitirEfectoLuz(QColor(200, 220, 255));
+    }
 }
 
-void Angel::interactuar(Entidad* /*otro*/) {
-    // Revela mensajes o guía
+void Angel::interactuar(Entidad* otro) {
+    if (!otro) return;
+    if (esJugador(otro)) {
+        revelarAlJugador();
+        enviarMensaje("No temas. El Altísimo está contigo.");
+    }
 }
 
 void Angel::revelarAlJugador() {
     m_visibleParaJugador = true;
-    // activar eventos o señales
+    setVisible(true);
+
+    if (m_sonido)
+        m_sonido->reproducirEfecto("angel_aparece.wav");
+
+    emitirEfectoLuz(Qt::white);
 }
 
 void Angel::enviarMensaje(const QString& mensaje) {
     m_mensaje = mensaje;
-    // emitir señal o notificar sistema de diálogo
+    emit mensajeDivino(mensaje);
+
+    if (m_sonido)
+        m_sonido->reproducirEfecto("susurro_divino.wav");
 }

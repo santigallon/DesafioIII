@@ -88,40 +88,39 @@ void Player::descansar(float segundos) {
 
 void Player::interactuarCon(Entidad* e, bool ayudar) {
     if (!e) return;
+
     if (ayudar) {
-        // ejemplo: ofrecer cura simbólica
         e->curar(5);
-    } else {
-        // ejemplo: conversación o intentar exorcizar
+        emitirDialogo("Que el Señor te proteja.");
+    }
+    else {
+        // Interacción base: charla o exorcismo según contexto
+        emitirDialogo("¿Necesitas algo?");
     }
 }
 
 void Player::lanzarProyectil(const QPointF& dir) {
     Q_UNUSED(dir);
-    if (m_proyectiles > 0) {
-        m_proyectiles--;
-        // emitir señal o crear Projectile en Game
-    }
+    if (m_proyectiles <= 0) return;
+
+    m_proyectiles--;
+    emit crearProyectil(posicion(), dir);
 }
 
 void Player::iniciarExorcismo(Entidad* objetivo) {
     if (!objetivo) return;
-    // Lógica: emitir señal para UI / Managers
-    // La resolución la hará InteractionManager / VentanaExorcismo
+    emit pedirExorcismo(objetivo);
 }
 
 void Player::iniciarEscritura(const QString& texto) {
-    Q_UNUSED(texto);
-    // Conectar con VentanaEscritura (no incluida en este bloque)
+    emit abrirVentanaEscritura(texto);
 }
 
 void Player::iniciarOratoria(const QString& tema) {
-    Q_UNUSED(tema);
-    // Conectar con VentanaOratoria
+    emit abrirVentanaOratoria(tema);
 }
 
 void Player::recibirProvidencia() {
-    // ejemplo: restaura vida parcial y aumenta fe
     curar(20);
     aumentarFe(5.0);
 }
@@ -182,3 +181,7 @@ void Player::clampValores() {
     if (m_fe < 0) m_fe = 0;
     if (m_pecado < 0) m_pecado = 0;
 }
+
+
+
+

@@ -31,9 +31,23 @@ public:
     virtual void recibirDanio(int cantidad, const QString& razon = QString());
     virtual void curar(int cantidad);
 
+    bool esJugador(Entidad* e);
+    float distanciaA(Entidad* e) const;
+
+    void moverPor(float dx, float dy);
+    void moverHacia(const QPointF& destino, float velocidad);
+
+    void emitirDialogo(const QString& texto);
+    void emitirEfectoLuz(const QColor& color);
+
+    void modificarVida(int delta);
+    void moverAleatorio(float velocidad);
+
 signals:
     void murio(Entidad* quien);
     void vidaCambiada(int nuevaVida);
+    void dialogo(const QString& texto);
+    void efectoLuz(const QColor& color);
 
 protected:
     QString m_nombre;

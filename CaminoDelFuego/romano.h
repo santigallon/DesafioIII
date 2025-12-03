@@ -1,5 +1,5 @@
-#ifndef JUDIO_H
-#define JUDIO_H
+#ifndef ROMANO_H
+#define ROMANO_H
 
 #pragma once
 #include "NPC.h"
@@ -21,7 +21,6 @@ public:
 private:
     int m_nivelAutoridad;
 };
-#endif // ENTIDAD_H
-
+#endif // ROMANO_H
 
 

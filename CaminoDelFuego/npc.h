@@ -8,7 +8,7 @@
  * NPC - base para cualquier personaje no jugable.
  * Define facción y comportamiento básico.
  */
-enum class Faccion { PAGANO, JUDIO, CRISTIANO, ROMANO, END, POSEIDO };
+enum class Faccion { PAGANO, JUDIO, CRISTIANO, ROMANO, ENDEMONIADO, POSEIDO, ANGEl};
 
 class NPC : public Entidad {
     Q_OBJECT
