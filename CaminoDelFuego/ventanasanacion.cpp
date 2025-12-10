@@ -10,10 +10,10 @@ VentanaSanacion::VentanaSanacion(QWidget* parent)
     setWindowTitle("Sanación");
     auto* layout = new QVBoxLayout(this);
 
-    layout->addWidget(new QLabel("Pablo ora por la persona necesitada…"));
+    layout->addWidget(new QLabel("Pablo ora por la persona necesitada…", this));
 
-    auto* btnA = new QPushButton("Sanar");
-    auto* btnB = new QPushButton("Cancelar");
+    auto* btnA = new QPushButton("Sanar", this);
+    auto* btnB = new QPushButton("Cancelar", this);
 
     connect(btnA, &QPushButton::clicked, this, &VentanaSanacion::onAceptar);
     connect(btnB, &QPushButton::clicked, this, &VentanaSanacion::onCancelar);
@@ -27,6 +27,8 @@ VentanaSanacion::~VentanaSanacion() = default;
 void VentanaSanacion::iniciar(Entidad* objetivo) {
     m_objetivo = objetivo;
     show();
+    raise();
+    activateWindow();
 }
 
 void VentanaSanacion::onAceptar() {

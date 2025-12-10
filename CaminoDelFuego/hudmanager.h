@@ -2,15 +2,16 @@
 #define HUDMANAGER_H
 
 #pragma once
-#include <QObject>
+
+#include <QWidget>
 #include <QProgressBar>
 
 class GestorBarrasEstado;
 
-class HudManager : public QObject {
+class HudManager : public QWidget {
     Q_OBJECT
 public:
-    explicit HudManager(QObject* parent = nullptr);
+    explicit HudManager(QWidget* parent = nullptr);
     ~HudManager() override;
 
     void setGestorBarras(GestorBarrasEstado* barras);
@@ -21,12 +22,14 @@ public:
                          QProgressBar* pecado);
 
 private:
-    GestorBarrasEstado* m_barras;
+    void establecerConexiones(); // intenta conectar si todos los punteros necesarios están disponibles
 
-    QProgressBar* m_barVida;
-    QProgressBar* m_barEnergia;
-    QProgressBar* m_barFe;
-    QProgressBar* m_barPecado;
+    GestorBarrasEstado* m_barras = nullptr;
+
+    QProgressBar* m_barVida = nullptr;
+    QProgressBar* m_barEnergia = nullptr;
+    QProgressBar* m_barFe = nullptr;
+    QProgressBar* m_barPecado = nullptr;
 };
 
 #endif // HUDMANAGER_H

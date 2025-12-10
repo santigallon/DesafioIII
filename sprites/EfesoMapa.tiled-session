@@ -3,63 +3,132 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "mapaEfeso.xml",
+    "activeFile": "prision_de_Roma.json",
     "expandedProjectPaths": [
     ],
+    "exportAsImage.drawObjectLabels": true,
+    "exportAsImage.drawTileGrid": true,
+    "exportAsImage.includeBackgroundColor": true,
+    "exportAsImage.useCurrentScale": true,
     "file.lastUsedOpenFilter": "Todos los archivos (*)",
     "fileStates": {
         "0844506928e5b1d10ab12898d93ab60a0574397b.tsx": {
-            "scaleInDock": 2,
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1
+        },
+        "47743.tsx": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1
+        },
+        "Game Boy Advance - Fire Emblem_ The Blazing Blade - Maps - Chapter 07x.tsx": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "ae0551c6d30071a29d902c054fd51fdd795bfa5a.tsx": {
-            "scaleInDock": 2,
+            "scaleInDock": 1.5,
             "scaleInEditor": 1
+        },
+        "camioDamasco.json": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 400,
+                "y": 1882.5
+            }
         },
         "camioDamasco.xml": {
             "expandedGroupLayers": [
                 4
             ],
-            "scale": 0.75,
+            "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 737.3333333333333,
-                "y": 621.3333333333334
+                "x": 482,
+                "y": 1103.5
+            }
+        },
+        "d25qisk-71ef4e39-120f-4c97-86d4-9139b75aa059.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "h56li2gh0d061.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "interiorCasas.json": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 515,
+                "y": 832
+            }
+        },
+        "mapaEfeso.json": {
+            "scale": 1.5,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 2810,
+                "y": 4388
+            }
+        },
+        "mapaEfeso.tmj": {
+            "scale": 0.125,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 1048,
+                "y": 3312
             }
         },
         "mapaEfeso.xml": {
-            "scale": 1,
+            "scale": 0.125,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 468,
-                "y": 3496
+                "x": 1048,
+                "y": 3312
+            }
+        },
+        "prision_de_Roma.json": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 512,
+                "y": 511
             }
         }
     },
+    "last.exportedFilePath": "C:/Users/USUARIO/DesafioIII/sprites",
     "last.externalTilesetPath": "C:/Users/USUARIO/DesafioIII/sprites",
     "last.imagePath": "C:/Users/USUARIO/DesafioIII/sprites",
-    "map.height": 40,
-    "map.lastUsedFormat": "tmx",
+    "map.height": 64,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "json",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 40,
+    "map.width": 64,
     "openFiles": [
-        "camioDamasco.xml",
-        "0844506928e5b1d10ab12898d93ab60a0574397b.tsx",
-        "ae0551c6d30071a29d902c054fd51fdd795bfa5a.tsx",
-        "mapaEfeso.xml"
+        "camioDamasco.json",
+        "mapaEfeso.json",
+        "prision_de_Roma.json"
     ],
     "project": "EfesoMapa.tiled-project",
     "recentFiles": [
-        "camioDamasco.xml",
-        "0844506928e5b1d10ab12898d93ab60a0574397b.tsx",
+        "camioDamasco.json",
+        "mapaEfeso.json",
+        "prision_de_Roma.json",
+        "47743.tsx",
+        "Game Boy Advance - Fire Emblem_ The Blazing Blade - Maps - Chapter 07x.tsx",
+        "h56li2gh0d061.tsx",
+        "interiorCasas.json",
+        "d25qisk-71ef4e39-120f-4c97-86d4-9139b75aa059.tsx",
+        "mapaEfeso.tmj",
         "ae0551c6d30071a29d902c054fd51fdd795bfa5a.tsx",
-        "mapaEfeso.xml"
+        "0844506928e5b1d10ab12898d93ab60a0574397b.tsx",
+        "camioDamasco.xml"
     ],
     "tileset.lastUsedFilter": "Archivos de conjuntos de patrones Tiled (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
-        "height": 16,
-        "width": 16
+        "height": 32,
+        "width": 32
     }
 }

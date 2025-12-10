@@ -1,7 +1,7 @@
+#pragma once
 #ifndef VENTANAORATORIA_H
 #define VENTANAORATORIA_H
 
-#pragma once
 #include <QDialog>
 
 class Entidad;

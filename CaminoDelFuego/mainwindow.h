@@ -10,12 +10,17 @@ class QGraphicsScene;
 class QTimer;
 class HabilidadWidget;
 class Registro;
+class QKeyEvent; // forward declaration
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
     explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow() override;
+    void keyPressEvent(QKeyEvent* event) override;
+    void keyReleaseEvent(QKeyEvent* event) override;
+
+    bool keyW, keyA, keyS, keyD;
 
 private slots:
     void actualizarJuego();

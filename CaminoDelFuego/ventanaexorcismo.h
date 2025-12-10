@@ -2,26 +2,29 @@
 #define VENTANAEXORCISMO_H
 
 #pragma once
-#include <QDialog>
+#include <QWidget>
+#include <QVector>
+#include <QChar>
 
-class Entidad;
-
-class VentanaExorcismo : public QDialog {
+class VentanaExorcismo : public QWidget {
     Q_OBJECT
 public:
     explicit VentanaExorcismo(QWidget* parent = nullptr);
     ~VentanaExorcismo() override;
 
-    void iniciar(Entidad* objetivo);
+    void iniciarSecuencia();
+
+protected:
+    void keyPressEvent(QKeyEvent* event) override;
 
 signals:
-    void exorcismoCompletado(Entidad* objetivo, bool exitoso);
-
-private slots:
-    void onAceptar();
-    void onCancelar();
+    void exorcismoCompletado();
+    void exorcismoFallado();
 
 private:
-    Entidad* m_objetivo;
+    QVector<QChar> secuencia; // letras (K, O, L, N -> se interpreta N como Ñ)
+    int indice;
+    void generarSecuencia(int longitud);
 };
+
 #endif // VENTANAEXORCISMO_H

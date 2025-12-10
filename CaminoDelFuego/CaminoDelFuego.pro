@@ -12,16 +12,19 @@ CONFIG += c++17
 SOURCES += \
     angel.cpp \
     camara2d.cpp \
+    cargadortiled.cpp \
     cristiano.cpp \
     endemoniado.cpp \
     entidad.cpp \
     game.cpp \
+    gamewidget.cpp \
     gestorbarrasestado.cpp \
     gestoreventos.cpp \
     gestorfisicas.cpp \
     gestorinteracciones.cpp \
     gestorsonido.cpp \
     habilidadwidget.cpp \
+    housewindow.cpp \
     hudmanager.cpp \
     inputview.cpp \
     judio.cpp \
@@ -32,10 +35,13 @@ SOURCES += \
     mapatiles.cpp \
     nombremanager.cpp \
     npc.cpp \
+    patternwindow.cpp \
     player.cpp \
     poseido.cpp \
     registro.cpp \
     romano.cpp \
+    tiledloader.cpp \
+    ventanacartaspulinas.cpp \
     ventanaexorcismo.cpp \
     ventanaoratoria.cpp \
     ventanasanacion.cpp
@@ -43,16 +49,19 @@ SOURCES += \
 HEADERS += \
     angel.h \
     camara2d.h \
+    cargadortiled.h \
     cristiano.h \
     endemoniado.h \
     entidad.h \
     game.h \
+    gamewidget.h \
     gestorbarrasestado.h \
     gestoreventos.h \
     gestorfisicas.h \
     gestorinteracciones.h \
     gestorsonido.h \
     habilidadwidget.h \
+    housewindow.h \
     hudmanager.h \
     inputview.h \
     judio.h \
@@ -62,10 +71,13 @@ HEADERS += \
     mapatiles.h \
     nombremanager.h \
     npc.h \
+    patternwindow.h \
     player.h \
     poseido.h \
     registro.h \
     romano.h \
+    tiledloader.h \
+    ventanacartaspulinas.h \
     ventanaexorcismo.h \
     ventanaoratoria.h \
     ventanasanacion.h

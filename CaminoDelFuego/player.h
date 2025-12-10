@@ -5,6 +5,8 @@
 #include <QPointF>
 #include <QString>
 #include <QTimer>
+#include <QVector>
+#include <QPixmap>
 
 class Player : public Entidad {
     Q_OBJECT
@@ -52,12 +54,18 @@ public:
     bool feAlta(double umbral = 75.0) const;
     bool estaCorrupto(double umbral = 60.0) const;
 
+    // Sprite / animation API
+    bool cargarSpriteSheet(const QString& ruta, int frameW, int frameH, int cols, int rows, bool centerOffset = true);
+    void setFrame(int idx); // seleccionar frame por índice (0..n-1)
+    void startAnimation(int intervalMs = 150);
+    void stopAnimation();
+    bool tieneFrames() const { return !m_frames.isEmpty(); }
+
 signals:
     void energiaCambiada(float nuevaEnergia);
     void feCambiada(double nuevaFe);
     void pecadoCambiado(double nuevoPecado);
 
-    // <-- SEÑALES AÑADIDAS (eran emitidas en Player.cpp)
     void crearProyectil(const QPointF& origen, const QPointF& direccion);
     void pedirExorcismo(Entidad* objetivo);
     void abrirVentanaEscritura(const QString& texto);
@@ -72,6 +80,7 @@ signals:
 
 private slots:
     void onRegenTick();
+    void onAnimTick();
 
 private:
     // Físicos
@@ -95,6 +104,13 @@ private:
     // Temporizadores / regeneración
     QTimer m_regenTimer;
     void clampValores();
-};
-#endif // PLAYER_H
 
+    // Spritesheet / animación
+    QVector<QPixmap> m_frames;
+    int m_frameIndex;
+    QTimer* m_animTimer;
+    int m_animIntervalMs;
+    bool m_centerOffset; // si true pone offset para que pos() sea el pie del sprite
+};
+
+#endif // PLAYER_H

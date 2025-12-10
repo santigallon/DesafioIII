@@ -2,7 +2,10 @@
 #define GESTORBARRASESTADO_H
 
 #pragma once
-#include <QObject>
+#include <QGraphicsScene>
+#include <QGraphicsRectItem>
+#include "Player.h"
+
 
 /**
  * GestorBarrasEstado
@@ -19,6 +22,8 @@ class Player;
 class GestorBarrasEstado : public QObject {
     Q_OBJECT
 public:
+    GestorBarrasEstado(QGraphicsScene *scene, Player* jugador);
+
     explicit GestorBarrasEstado(QObject* parent = nullptr);
     ~GestorBarrasEstado() override;
 
@@ -37,6 +42,10 @@ public:
     double fe() const;
     double pecado() const;
 
+public slots:
+    void actualizarEnergia(float);
+    void actualizarFe(double);
+
 signals:
     void vidaCambiada(int nuevaVida);
     void energiaCambiada(float nuevaEnergia);
@@ -49,6 +58,8 @@ private:
     float m_energia;
     double m_fe;
     double m_pecado;
+    QGraphicsRectItem* barraEnergia;
+    QGraphicsRectItem* barraFe;
 };
 
 #endif // GESTORBARRASESTADO_H

@@ -1,5 +1,7 @@
 #include "Entidad.h"
 #include "player.h"
+#include <QLineF>
+#include <cmath>
 
 Entidad::Entidad(QGraphicsItem* parent)
     : QGraphicsPixmapItem(parent),
@@ -83,4 +85,23 @@ void Entidad::moverAleatorio(float velocidad) {
     float dx = (rand() % 3 - 1) * velocidad;
     float dy = (rand() % 3 - 1) * velocidad;
     moverPor(dx, dy);
+}
+
+void Entidad::setSprite(const QPixmap& px, bool alignFeet, int tileHeight) {
+    setPixmap(px);
+    // Ajuste sencillo: centramos horizontalmente; si alignFeet y tenemos tileHeight,
+    // colocamos el pixmap de modo que la "base" quede en la parte inferior del tile.
+    int w = px.width();
+    int h = px.height();
+    // offset.x: centrado horizontal (posiciones en QGraphicsPixmapItem usan setOffset)
+    qreal offsetX = -w / 2.0;
+    qreal offsetY = 0;
+    if (alignFeet && tileHeight > 0) {
+        // colocamos al pie: el bottom del sprite coincide con bottom del tile
+        offsetY = - (h - tileHeight);
+    } else {
+        // centrado vertical aproximado
+        offsetY = -h / 2.0;
+    }
+    setOffset(offsetX, offsetY);
 }

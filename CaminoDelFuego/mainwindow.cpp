@@ -11,6 +11,9 @@
 #include <QTimer>
 #include <QStatusBar>
 #include <QDebug>
+#include <QDockWidget>
+#include <QKeyEvent>
+#include <QApplication>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent),
@@ -22,14 +25,35 @@ MainWindow::MainWindow(QWidget* parent)
     m_habilidad(new HabilidadWidget(this)),
     m_registro(nullptr)
 {
+    keyW = keyA = keyS = keyD = false;
+
     // pasar la escena al juego antes de inicializar (tu código original hacía esto)
     m_game->setScene(m_scene);
 
+    // central widget: la vista que muestra la escena
     setCentralWidget(m_view);
     m_view->setScene(m_scene);
 
+    // Asegurar que la vista tenga foco para recibir teclas y un tamaño mínimo
+    m_view->setFocusPolicy(Qt::StrongFocus);
+    m_view->setFocus();
+    m_view->setMinimumSize(800, 600);
+    // Mejora de renderizado para pruebas
+    if (auto gv = qobject_cast<QGraphicsView*>(m_view)) {
+        gv->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+        gv->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
+    }
+
+    // Si la escena no tiene rect, asignamos uno temporal para que la view no se quede "vacía"
+    if (m_scene->sceneRect().isNull()) {
+        // rect por defecto; se sobrescribirá cuando cargues el mapa real
+        m_scene->setSceneRect(0, 0, 1024, 768);
+        qDebug() << "MainWindow: sceneRect por defecto aplicado (0,0,1024,768)";
+    }
+
     // inicializar juego (crea player, managers...)
     m_game->inicializar();
+    qDebug() << "MainWindow: tras m_game->inicializar()";
 
     // obtener el registro desde Game (lo creamos en Game::inicializar)
     m_registro = m_game->registro();
@@ -40,7 +64,14 @@ MainWindow::MainWindow(QWidget* parent)
             statusBar()->showMessage(msg, 4000); // mostrar 4s
             qDebug() << "[LOG]" << msg;
         });
+    } else {
+        qDebug() << "MainWindow: m_registro es nullptr (Game::inicializar no creó registro o no se expuso)";
     }
+
+    // Mostrar el hud en un dock (opcional — si no quieres dock, elimina esto)
+    QDockWidget* dock = new QDockWidget(tr("HUD"), this);
+    dock->setWidget(m_hud);
+    addDockWidget(Qt::RightDockWidgetArea, dock);
 
     // Conectar mover (WASD)
     connect(m_view, &InputView::mover, this, [this](bool up, bool down, bool left, bool right){
@@ -63,7 +94,6 @@ MainWindow::MainWindow(QWidget* parent)
             connect(m_habilidad, &HabilidadWidget::resultado, this, [this](bool exito){
                 if (exito) {
                     if (m_registro) m_registro->agregar("Exorcismo: Éxito");
-                    // recompensa simple: curar o marcar exorcismo
                     m_game->jugador()->recibirProvidencia();
                 } else {
                     if (m_registro) m_registro->agregar("Exorcismo: Falló");
@@ -89,21 +119,40 @@ MainWindow::MainWindow(QWidget* parent)
             if (m_registro) m_registro->agregar("Providencia invocada (L)");
             m_game->jugador()->recibirProvidencia();
         }
-        // Ñ: abrir escritura (ponemos un log y emitimos carta completa)
+        // Ñ: abrir escritura
         else if (t == "Ñ") {
             if (m_registro) m_registro->agregar("Inicia escritura de carta (Ñ)");
             m_game->jugador()->iniciarEscritura("Carta breve: Señor, ten piedad...");
-            // también registramos la carta (simulación)
             if (m_registro) m_registro->agregar("Carta escrita: 'Señor, ten piedad...'");
         }
     });
 
     connect(m_timer, &QTimer::timeout, this, &MainWindow::actualizarJuego);
     m_timer->start(16); // ~60 FPS
+
+    qDebug() << "MainWindow: constructor finalizado. centralWidget set y timer iniciado.";
 }
 
 MainWindow::~MainWindow() = default;
 
 void MainWindow::actualizarJuego() {
     m_game->update(0.016f);
+}
+
+void MainWindow::keyPressEvent(QKeyEvent* event) {
+    if(event->isAutoRepeat()) return;
+
+    if(event->key() == Qt::Key_W) keyW = true;
+    if(event->key() == Qt::Key_S) keyS = true;
+    if(event->key() == Qt::Key_A) keyA = true;
+    if(event->key() == Qt::Key_D) keyD = true;
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent* event) {
+    if(event->isAutoRepeat()) return;
+
+    if(event->key() == Qt::Key_W) keyW = false;
+    if(event->key() == Qt::Key_S) keyS = false;
+    if(event->key() == Qt::Key_A) keyA = false;
+    if(event->key() == Qt::Key_D) keyD = false;
 }

@@ -60,7 +60,7 @@ void GestorFisicas::aplicarLuzDivina(float intensidad, float duracionSeg) {
     m_eventoDivinoActivo = true;
     m_eventoDivinoActual = "LuzDivina";
     // aumentar nivel de luz temporalmente
-    float antiguo = m_nivelLuz;
+    //float antiguo = m_nivelLuz;nesecito esto para las continuaciones de juego
     establecerNivelLuz(std::min(2.0f, m_nivelLuz + intensidad));
     emit eventoDivinoIniciado(m_eventoDivinoActual);
     m_timerDivino.start(int(duracionSeg * 1000));
@@ -72,14 +72,15 @@ void GestorFisicas::brisaSuave(float fuerza) {
     // no usamos timer; es efecto corto
 }
 
-void GestorFisicas::terremotoSagrado(float magnitud) {
+/*lo nesecito para otra parte del juego aun no ha sido implementada
+ * void GestorFisicas::terremotoSagrado(float magnitud) {
     if (m_eventoDivinoActivo) return;
     m_eventoDivinoActivo = true;
     m_eventoDivinoActual = "TerremotoSagrado";
     emit eventoDivinoIniciado(m_eventoDivinoActual);
     // En un sistema completo harías shake en la cámara y daño leve a objetos frágiles
     m_timerDivino.start(1500); // ejemplo 1.5s
-}
+}*/
 
 void GestorFisicas::onTimeoutDivino() {
     // finalizar evento divino

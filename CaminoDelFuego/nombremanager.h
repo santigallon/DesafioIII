@@ -23,4 +23,4 @@ private:
     QString randomFromArray(const QString& key);
 };
 
-#endif
+#endif //NOMBREMANAGER_H

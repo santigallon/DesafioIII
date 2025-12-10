@@ -5,6 +5,7 @@
 #include <QGraphicsPixmapItem>
 #include <QPointF>
 #include <QString>
+#include <QColor>
 
 class Entidad : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
@@ -42,6 +43,9 @@ public:
 
     void modificarVida(int delta);
     void moverAleatorio(float velocidad);
+
+    // Helper: asignar sprite (pixmap) y centrar offset si se desea
+    void setSprite(const QPixmap& px, bool alignFeet = true, int tileHeight = 0);
 
 signals:
     void murio(Entidad* quien);

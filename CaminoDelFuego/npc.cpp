@@ -1,4 +1,5 @@
 #include "NPC.h"
+#include <QDebug>
 
 NPC::NPC(Faccion f, QGraphicsItem* parent)
     : Entidad(parent),
@@ -8,6 +9,10 @@ NPC::NPC(Faccion f, QGraphicsItem* parent)
 {
     m_nombre = "NPC";
     m_vida = 50;
+
+    // Opcional: asigna un pixmap placeholder (útil para probar visualmente)
+    // QPixmap px(":/sprites/npc_placeholder.png");
+    // if (!px.isNull()) setSprite(px, false);
 }
 
 NPC::~NPC() = default;
@@ -18,13 +23,12 @@ bool NPC::esHostil() const { return m_hostil; }
 void NPC::setHostil(bool s) { m_hostil = s; }
 
 void NPC::actualizar(float /*dt*/) {
-    // comportamiento básico vacío
+    // comportamiento básico vacío (sobrescribir en subclases)
 }
 
 void NPC::interactuar(Entidad* /*otro*/) {
-    // interacción genérica
+    // interacción genérica (sobrescribir)
 }
-
 
 void NPC::transformarA(Faccion nuevaFaccion) {
     m_faccion = nuevaFaccion;

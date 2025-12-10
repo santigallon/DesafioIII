@@ -26,6 +26,25 @@ void GestorBarrasEstado::setObjetivo(Entidad* objetivo) {
         m_pecado = p->pecado();
     }
 }
+void GestorBarrasEstado::actualizarEnergia(float valor) {
+    m_energia = valor;
+
+    if (barraEnergia) {
+        barraEnergia->setRect(0, 0, valor, 10);
+    }
+
+    emit energiaCambiada(valor);
+}
+
+void GestorBarrasEstado::actualizarFe(double valor) {
+    m_fe = valor;
+
+    if (barraFe) {
+        barraFe->setRect(0, 0, valor, 10);
+    }
+
+    emit feCambiada(valor);
+}
 
 void GestorBarrasEstado::establecerVida(int v) {
     m_vida = v;

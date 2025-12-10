@@ -10,10 +10,10 @@ VentanaOratoria::VentanaOratoria(QWidget* parent)
     setWindowTitle("Oratoria");
     auto* layout = new QVBoxLayout(this);
 
-    layout->addWidget(new QLabel("Pablo habla movido por el Espíritu Santo…"));
+    layout->addWidget(new QLabel("Pablo habla movido por el Espíritu Santo…", this));
 
-    auto* btnA = new QPushButton("Proclamar mensaje");
-    auto* btnB = new QPushButton("Cancelar");
+    auto* btnA = new QPushButton("Proclamar mensaje", this);
+    auto* btnB = new QPushButton("Cancelar", this);
 
     connect(btnA, &QPushButton::clicked, this, &VentanaOratoria::onAceptar);
     connect(btnB, &QPushButton::clicked, this, &VentanaOratoria::onCancelar);
@@ -27,6 +27,8 @@ VentanaOratoria::~VentanaOratoria() = default;
 void VentanaOratoria::iniciar(Entidad* audiencia) {
     m_audiencia = audiencia;
     show();
+    raise();
+    activateWindow();
 }
 
 void VentanaOratoria::onAceptar() {
