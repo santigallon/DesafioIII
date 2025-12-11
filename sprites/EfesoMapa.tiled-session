@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "prision_de_Roma.json",
+    "activeFile": "camioDamasco.json",
     "expandedProjectPaths": [
     ],
     "exportAsImage.drawObjectLabels": true,
@@ -32,8 +32,8 @@
             "scale": 2,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 400,
-                "y": 1882.5
+                "x": 500,
+                "y": 3785.5
             }
         },
         "camioDamasco.xml": {
@@ -64,11 +64,11 @@
             }
         },
         "mapaEfeso.json": {
-            "scale": 1.5,
+            "scale": 1,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 2810,
-                "y": 4388
+                "x": 3544,
+                "y": 3436
             }
         },
         "mapaEfeso.tmj": {
@@ -88,11 +88,11 @@
             }
         },
         "prision_de_Roma.json": {
-            "scale": 2,
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 512,
-                "y": 511
+                "x": 511.9999999999999,
+                "y": 510.6666666666666
             }
         }
     },
@@ -112,9 +112,9 @@
     ],
     "project": "EfesoMapa.tiled-project",
     "recentFiles": [
-        "camioDamasco.json",
-        "mapaEfeso.json",
         "prision_de_Roma.json",
+        "mapaEfeso.json",
+        "camioDamasco.json",
         "47743.tsx",
         "Game Boy Advance - Fire Emblem_ The Blazing Blade - Maps - Chapter 07x.tsx",
         "h56li2gh0d061.tsx",
